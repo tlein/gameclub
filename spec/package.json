@@ -1,0 +1,6 @@
+{
+  "name": "GameClubTests",
+  "description": "Tests for gameclub",
+  "version ": "0.0.1",
+  "main": "SpecRunner.html"
+}
