@@ -44,6 +44,7 @@ gulp.task('typescript', function () {
         .plugin('tsify', tsconfig)
         .transform(babelify, babelconfig)
         .bundle()
+        .on('error', swallowError)
         .pipe(exorcist('build/scripts/bundle/main.js.map'))
         .pipe(source('main.js'))
         .pipe(gulp.dest('build/scripts/bundle'));
@@ -106,6 +107,12 @@ function moveTask(taskName,fileGlob,dest) {
         return gulp.src(fileGlob).pipe(gulp.dest(dest));
     });
 }
+
+function swallowError (error) {
+  console.log(error.toString());
+  this.emit('end');
+}
+
 
 moveTask('resources', 'resources/**', 'build/resources');
 moveTask('package', 'package.json', 'build/');

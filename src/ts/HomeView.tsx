@@ -21,8 +21,11 @@ export default class HomeView extends React.Component<any, HomeViewState> {
                     secondary={true}
                     onMouseUp={() => this.addNewGame()} />
                 <LeftNav
+                    docked={false}
                     width={300}
-                    open={this.state.open}>
+                    open={this.state.open}
+                    onRequestChange={(open, reason) => this.navRequestClose(open, reason)}>
+
                     <SearchView />
                 </LeftNav>
             </div>
@@ -32,6 +35,12 @@ export default class HomeView extends React.Component<any, HomeViewState> {
     private addNewGame() {
         this.setState({
             open: !this.state.open
+        });
+    }
+
+    private navRequestClose(openState : boolean, reason) {
+        this.setState({
+            open: openState
         });
     }
 }
