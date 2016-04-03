@@ -1,4 +1,33 @@
+/* Home View */
 body {
   font: 100% Helvetica, sans-serif;
   color: #333;
+  background-color: #5992F2
+}
+
+.homeView {
+    width: 100%;
+}
+
+.btnAddNewGame  {
+    clear: both;
+    float: right;
+}
+
+/* Search View */
+.divSearchContainer {
+    padding: 10px 10px;
+}
+
+.clearingDiv {
+    clear: both;
+}
+
+.searchElements {
+    width: 100%;
+}
+
+.btnSearch {
+    clear: both;
+    float: right;
 }

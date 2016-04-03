@@ -4,10 +4,10 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import FriendsContainerView from "./FriendsContainerView";
+import HomeView from "./HomeView";
 
 export function main(htmlRoot : HTMLElement) {
-    ReactDOM.render(React.createElement(FriendsContainerView), htmlRoot);
+    ReactDOM.render(React.createElement(HomeView), htmlRoot);
 }
 
 main(document.getElementById("container"));
