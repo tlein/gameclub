@@ -1,9 +1,13 @@
 {
   "ambientDependencies": {
+    "express": "registry:dt/express#4.0.0+20160317120654",
+    "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160322035842",
     "material-ui": "registry:dt/material-ui#0.14.4+20160316155526",
+    "mime": "registry:dt/mime#0.0.0+20160316155526",
     "node": "registry:dt/node#4.0.0+20160330064709",
     "react": "registry:dt/react#0.14.0+20160319053454",
     "react-dom": "registry:dt/react-dom#0.14.0+20160316155526",
-    "react-tap-event-plugin": "registry:dt/react-tap-event-plugin#0.0.0+20160226083632"
+    "react-tap-event-plugin": "registry:dt/react-tap-event-plugin#0.0.0+20160226083632",
+    "serve-static": "registry:dt/serve-static#0.0.0+20160317120654"
   }
 }
