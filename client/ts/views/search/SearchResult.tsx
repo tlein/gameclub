@@ -11,7 +11,7 @@ export default class SearchResult extends React.Component<SearchResultProps, any
         return (
             <Card style={ { marginTop: "20px" } }>
                 <CardMedia overlay={<CardTitle title={this.props.title} />}>
-                    <img src={this.props.imageURL} />
+                    <img width="265px" height="149px" src={this.props.imageURL} />
                 </CardMedia>
             </Card>
         );

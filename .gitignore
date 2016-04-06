@@ -28,7 +28,7 @@ tmp/
 config.py
 
 # Ignore generated static pages for flask app
-app/static/
+server/static/
 
 # DB files
 app.db
