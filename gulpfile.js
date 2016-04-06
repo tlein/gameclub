@@ -17,7 +17,7 @@ var jsdepends = [
 ]
 
 var cssdepends = [
-    'build/css/main.css'
+    'static/css/main.css'
 ]
 
 var DEPEND_LOCALS = {
@@ -45,9 +45,9 @@ gulp.task('typescript', function () {
         .transform(babelify, babelconfig)
         .bundle()
         .on('error', swallowError)
-        .pipe(exorcist('build/scripts/bundle/main.js.map'))
+        .pipe(exorcist('app/static/scripts/bundle/main.js.map'))
         .pipe(source('main.js'))
-        .pipe(gulp.dest('build/scripts/bundle'));
+        .pipe(gulp.dest('app/static/scripts/bundle'));
 });
 
 gulp.task('spec', function() {
@@ -58,7 +58,7 @@ gulp.task('spec', function() {
         .transform(babelify, babelconfig)
         .bundle()
         .pipe(source('spec.js'))
-        .pipe(gulp.dest('build/spec/'));
+        .pipe(gulp.dest('app/static/spec/'));
 });
 
 gulp.task('index', function() {
@@ -67,7 +67,7 @@ gulp.task('index', function() {
             locals : DEPEND_LOCALS,
             pretty : true
         }))
-        .pipe(gulp.dest('build'));
+        .pipe(gulp.dest('app/static'));
 });
 
 gulp.task('specrunner', function() {
@@ -76,20 +76,20 @@ gulp.task('specrunner', function() {
             locals : DEPEND_LOCALS,
             pretty : true
         }))
-        .pipe(gulp.dest('build/spec'));
+        .pipe(gulp.dest('app/static/spec'));
 });
 
 gulp.task('css', function() {
     return gulp.src('src/sass/main.scss')
         .pipe(sass())
-        .pipe(gulp.dest('build/css'));
+        .pipe(gulp.dest('app/static/css'));
 });
 
 gulp.task('babel-helpers', function () {
     return gulp.src('src/')
         .pipe(babel({externalHelpers: true}))
         .pipe(babelhelpers('babeleHelpers.js'))
-        .pipe(gulp.dest('build/scripts'));
+        .pipe(gulp.dest('app/static/scripts'));
 })
 
 gulp.task('watch', function () {
@@ -114,9 +114,9 @@ function swallowError (error) {
 }
 
 
-moveTask('resources', 'resources/**', 'build/resources');
-moveTask('package', 'package.json', 'build/');
-moveTask('specpackage', 'spec/package.json', 'build/spec');
+moveTask('resources', 'resources/**', 'app/static/resources');
+moveTask('package', 'package.json', 'app/static/');
+moveTask('specpackage', 'spec/package.json', 'app/static/spec');
 
 gulp.task('tests', [
     'spec',

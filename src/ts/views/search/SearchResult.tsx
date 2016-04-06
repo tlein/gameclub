@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Card, CardMedia, CardHeader} from "material-ui";
+import {Card, CardMedia, CardHeader, CardTitle} from "material-ui";
 
 interface SearchResultProps {
     title : string,
@@ -10,10 +10,7 @@ export default class SearchResult extends React.Component<SearchResultProps, any
     render() : JSX.Element {
         return (
             <Card style={ { marginTop: "20px" } }>
-                <CardHeader
-                    title={this.props.title}
-                    textStyle={ {paddingRight: "0"} } />
-                <CardMedia>
+                <CardMedia overlay={<CardTitle title={this.props.title} />}>
                     <img src={this.props.imageURL} />
                 </CardMedia>
             </Card>

@@ -5,6 +5,7 @@ build/
 lib/
 node_modules/
 .sass-cache/
+__pycache__/
 
 # Ignore certain IntelliJ files
 .idea/workspace.xml
@@ -18,3 +19,17 @@ tsconfig.json
 
 # Ignore OSX files
 .DS_Store
+
+# Ignore flask virtual environment
+flask/
+tmp/
+
+# Ignore application config file
+config.py
+
+# Ignore generated static pages for flask app
+app/static/
+
+# DB files
+app.db
+db_repository/

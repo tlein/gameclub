@@ -1,7 +1,8 @@
 import * as React from "react";
-import {RaisedButton, LeftNav} from "material-ui";
+import {LeftNav} from "material-ui";
 
-import SearchView from "./SearchView";
+import SuggestionListView from "./SuggestionListView";
+import SearchView from "../search/SearchView";
 
 interface HomeViewState {
     open : boolean,
@@ -15,11 +16,6 @@ export default class HomeView extends React.Component<any, HomeViewState> {
     render() : JSX.Element {
         return (
             <div className="homeView">
-                <RaisedButton
-                    label="Add New Game"
-                    className="btnAddNewGame"
-                    secondary={true}
-                    onMouseUp={() => this.addNewGame()} />
                 <LeftNav
                     docked={false}
                     width={300}
@@ -28,11 +24,12 @@ export default class HomeView extends React.Component<any, HomeViewState> {
 
                     <SearchView />
                 </LeftNav>
+                <SuggestionListView clickSuggestGame={() => this.openSearch()} />
             </div>
         );
     }
 
-    private addNewGame() {
+    private openSearch() {
         this.setState({
             open: !this.state.open
         });

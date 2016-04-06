@@ -1,0 +1,23 @@
+.suggestionCardBody {
+    text-align: center;
+    margin: 5% 10%;
+}
+
+.title {
+    @extend .suggestionCardBody;
+
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.endorsements {
+    @extend .suggestionCardBody;
+
+    font-size: 8pt;
+}
+
+.btnEndorse {
+    @extend .suggestionCardBody;
+
+    width: 80%;
+}

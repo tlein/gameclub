@@ -4,11 +4,11 @@ html
         meta(charset="UTF-8")
         script(type="text/javascript").
         each file in cssdepends
-            link(rel="stylesheet", type="text/css", href="../"+file)
+            link(rel="stylesheet", type="text/css", href=file)
         each file in jsdepends
-            script(type="text/javascriopt", src="../"+file)
+            script(type="text/javascriopt", src=file)
 
     body
         div(id="container")
 
-        script(type="text/javascript", src="scripts/bundle/main.js")
+        script(type="text/javascript", src="static/scripts/bundle/main.js")
