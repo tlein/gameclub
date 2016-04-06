@@ -1,4 +1,4 @@
-from app import app, api
+from server import app, api
 from flask_restful import Resource, reqparse
 from urllib.parse import urlencode
 

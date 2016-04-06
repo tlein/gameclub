@@ -11,4 +11,4 @@ api = Api(app)
 def index():
     return app.send_static_file('index.html')
 
-from app import search, db_models
+from server import search, db_models
